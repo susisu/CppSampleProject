@@ -1,0 +1,20 @@
+.PHONY: clean
+
+INCLUDES += ../lib
+
+SRCS[] =
+    main
+    printer
+
+LIBS += ../lib/libsample
+
+EXENAME = sample
+
+TARGET = $(CXXProgram $(BINDIR)/$(EXENAME), $(SRCS))
+
+clean:
+    rm -f \
+        $(glob $(TARGET)) \
+        $(filter-proper-targets $(glob $(addsuffix .*, $(SRCS))))
+
+.DEFAULT: $(TARGET)

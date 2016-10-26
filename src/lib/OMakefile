@@ -1,0 +1,15 @@
+.PHONY: clean
+
+SRCS[] =
+    sample
+
+LIBNAME = libsample
+
+TARGET = $(StaticCXXLibrary $(LIBNAME), $(SRCS))
+
+clean:
+    rm -f \
+        $(glob $(TARGET)) \
+        $(filter-proper-targets $(glob $(addsuffix .*, $(SRCS))))
+
+.DEFAULT: $(TARGET)

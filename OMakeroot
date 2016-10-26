@@ -1,0 +1,7 @@
+open build/C
+
+DefineCommandVars()
+
+BINDIR = $(ROOT)/bin
+
+.SUBDIRS: .
