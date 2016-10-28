@@ -1,5 +1,5 @@
 bin/*
-!bin/.gitkeep
+!.gitkeep
 *.o
 *.d
 *.a
